@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detector de OS Real</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>¿Qué OS usas realmente?</h1>
+    <p class="subtitle">Análisis profundo y extracción de hardware en tiempo real.</p>
+    
+    <!-- Terminal de Escaneo -->
+    <div id="terminal-loader" class="terminal-box">
+        <div class="terminal-header">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="terminal-title">system_scan.sh</span>
+        </div>
+        <div id="terminal-logs" class="terminal-body">
+            <!-- Los logs se insertan dinámicamente -->
+        </div>
+    </div>
+
+    <!-- Resultados -->
+    <div id="result-box" class="info-box hidden">
+        <p><strong>Sistema Operativo:</strong> <span id="os-name" class="highlight">Detectando...</span></p>
+        <p><strong>Modelo / Distribución:</strong> <span id="os-model" class="highlight">Detectando...</span></p>
+        <p><strong>Arquitectura (Bits):</strong> <span id="os-bits">Detectando...</span></p>
+        <p><strong>Plataforma de Hardware:</strong> <span id="os-platform">Detectando...</span></p>
+        <p><strong>Detección de Entorno:</strong> <span id="os-vm" class="highlight">Detectando...</span></p>
+        <p><strong>Resolución de Monitor:</strong> <span id="os-screen" class="highlight">Detectando...</span></p>
+        <p><strong>Memoria RAM Estimada:</strong> <span id="os-ram" class="highlight">Detectando...</span></p>
+        <p><strong>Núcleos del Procesador:</strong> <span id="os-cores">Detectando...</span></p>
+        <p><strong>User Agent:</strong> <span id="os-ua" class="ua-text">Detectando...</span></p>
+    </div>
+
+    <!-- Botón de reescaneo oculto hasta el final -->
+    <button id="rescan-btn" class="btn hidden">🔄 Volver a escanear</button>
+
+    <div id="alert-box" class="alert hidden">
+        ⚠️ <strong>¡Alerta de Camuflaje!</strong> Se detectaron inconsistencias. Este sistema está imitando a Windows pero corre bajo un entorno o núcleo diferente.
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
