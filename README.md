@@ -1,5 +1,7 @@
 # 🖥️ Detector de OS Real e Inspección de Hardware
-![banner.svg](./banner.svg)
+<p align="center">
+  <img src="banner.svg" alt="Detector de OS Real Banner" width="650" style="max-width: 100%;">
+</p>
 
 Una aplicación web interactiva y open-source diseñada para realizar un análisis profundo del entorno del navegador del usuario. El script analiza las variables de entorno para desenmascarar sistemas operativos clonados o modificados que intentan camuflarse como Windows, exponiendo la verdadera identidad de la plataforma.
 
