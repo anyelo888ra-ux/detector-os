@@ -3,14 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detector de OS Real</title>
+    <title>Detector de OS Real | Inspección de Hardware y Privacidad</title>
+
+    <!-- Meta Etiquetas de Buscadores (SEO) -->
+    <meta name="description" content="Herramienta web Open Source de análisis de hardware, entorno virtualizado (VMware) y auditoría de privacidad en tiempo real.">
+    <meta name="keywords" content="detector os, hardware scan, webgl fingerprint, vmware detector, privacidad firefox">
+    <meta name="author" content="anyelo888ra-ux">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="alternate icon" href="favicon.ico">
+
+    <!-- Open Graph / Discord / WhatsApp / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://anyelo888ra-ux.github.io/detector-os/">
+    <meta property="og:title" content="Detector de OS Real - Auditoría de Hardware y Privacidad">
+    <meta property="og:description" content="Analiza las capas de camuflaje de tu sistema, detecta entornos virtuales, RAM y hilos de CPU en tiempo real.">
+    <meta property="og:image" content="https://anyelo888ra-ux.github.io/detector-os/banner.svg">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://anyelo888ra-ux.github.io/detector-os/">
+    <meta name="twitter:title" content="Detector de OS Real">
+    <meta name="twitter:description" content="Análisis profundo y extracción de métricas de hardware en vivo.">
+    <meta name="twitter:image" content="https://anyelo888ra-ux.github.io/detector-os/banner.svg">
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="container">
     <h1>¿Qué OS usas realmente?</h1>
-    <p class="subtitle">Análisis profundo y extracción de hardware en tiempo real.</p>
+    <p class="subtitle">Análisis profundo, hardware y auditoría de privacidad en tiempo real.</p>
     
     <!-- Terminal de Escaneo -->
     <div id="terminal-loader" class="terminal-box">
@@ -35,10 +59,27 @@
         <p><strong>Resolución de Monitor:</strong> <span id="os-screen" class="highlight">Detectando...</span></p>
         <p><strong>Memoria RAM Estimada:</strong> <span id="os-ram" class="highlight">Detectando...</span></p>
         <p><strong>Núcleos del Procesador:</strong> <span id="os-cores">Detectando...</span></p>
+        <p><strong>Tema del Sistema:</strong> <span id="os-theme">Detectando...</span></p>
+        <p><strong>Conexión de Red:</strong> <span id="os-network">Detectando...</span></p>
         <p><strong>User Agent:</strong> <span id="os-ua" class="ua-text">Detectando...</span></p>
     </div>
 
-    <!-- Botón de reescaneo oculto hasta el final -->
+    <!-- Alerta de Privacidad / Tutoriales -->
+    <div id="privacy-warning" class="privacy-box hidden">
+        🔒 <strong>Aviso de Privacidad Activa:</strong> Tu navegador está enmascarando métricas de hardware (como la RAM). Aquí tienes cómo verlas o ajustarlas:
+        <div class="tutorial-links">
+            <button class="tut-btn" onclick="toggleTutorial('firefox')">🦊 Ver en Firefox</button>
+            <button class="tut-btn" onclick="toggleTutorial('chrome')">🌐 Ver en Chrome / Edge</button>
+        </div>
+        <div id="tut-firefox" class="tut-content hidden">
+            <p><strong>Firefox:</strong> Escribe <code>about:config</code> en la barra de URL, busca <code>privacy.resistFingerprinting</code> y cámbiala a <code>false</code> si deseas reportar hardware real.</p>
+        </div>
+        <div id="tut-chrome" class="tut-content hidden">
+            <p><strong>Chrome / Edge:</strong> Revisa que no tengas extensiones agresivas de anti-fingerprinting activadas en modo estricto para este sitio.</p>
+        </div>
+    </div>
+
+    <!-- Botón de reescaneo -->
     <button id="rescan-btn" class="btn hidden">🔄 Volver a escanear</button>
 
     <div id="alert-box" class="alert hidden">
